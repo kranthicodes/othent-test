@@ -112,7 +112,7 @@ function App() {
     const res = await api.dispatch(
       transaction,
       "https://turbo.ardrive.io",
-      arweave,
+      arweave
     );
     console.log("Dispatch,\n", res);
   }
@@ -120,7 +120,7 @@ function App() {
   if (connected) {
     return (
       <>
-        <div>
+        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
           <h2>Connected</h2>
           <h3>{address}</h3>
           <h3>Strategy: {strategy}</h3>
