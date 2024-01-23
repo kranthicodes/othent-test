@@ -20,7 +20,7 @@ function App() {
   const address = useActiveAddress();
   const strategy = useStrategy();
   const [encrypted, setEncrypted] = useState(null);
-  console.log({ api });
+  // console.log({ api });
   // console.log({ api });
   // async function handleConnect() {
   //   await window.arweaveWallet.connect([
@@ -103,6 +103,19 @@ function App() {
     const txn = await arweave.transactions.post(transaction);
     console.log(txn, "tx");
   }
+  async function handleDispatch() {
+    const transaction = await arweave.createTransaction({
+      data: '<html><head><meta charset="UTF-8"><title>Hello world!</title></head><body>Hello world!</body></html>',
+    });
+    transaction.addTag("Content-Type", "text/html");
+    console.log(transaction);
+    const res = await api.dispatch(
+      transaction,
+      "https://turbo.ardrive.io",
+      arweave,
+    );
+    console.log("Dispatch,\n", res);
+  }
 
   if (connected) {
     return (
@@ -115,7 +128,8 @@ function App() {
           <button onClick={handleEncrypt}>Encrypt</button>
           <button onClick={handleDecrypt}>Decrypt</button>
           <button onClick={handleSign}>Sign</button>
-          <button onClick={handleSignAndSend}>Sign and Send (Dispatch)</button>
+          <button onClick={handleSignAndSend}>Sign and Send</button>
+          <button onClick={handleDispatch}>Sign and Send (Dispatch)</button>
         </div>
       </>
     );

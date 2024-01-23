@@ -13,7 +13,7 @@
     "@arweave-wallet-kit-beta/arconnect-strategy": "^0.0.1-beta.5",
     "@arweave-wallet-kit-beta/browser-wallet-strategy": "^0.0.1-beta.4",
     "@arweave-wallet-kit-beta/core": "^0.0.1-beta.4",
-    "@arweave-wallet-kit-beta/othent-strategy": "^0.0.1-beta.9",
+    "@arweave-wallet-kit-beta/othent-strategy": "^0.0.1-beta.11",
     "@arweave-wallet-kit-beta/react": "^0.0.1-beta.4",
     "@permaweb/aoconnect": "^0.0.33",
     "arweave": "^1.14.4",
